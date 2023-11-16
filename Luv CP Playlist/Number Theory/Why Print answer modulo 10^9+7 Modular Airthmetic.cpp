@@ -8,7 +8,7 @@ Addition -- (a + b) % M = ((a % M) + (b % M)) % M;
 
 Subtraction -- (a - b) % M = ((a % M) - (b % M) + M) % M;
 
-Multiplication -- (a *b) % M = ((a % M) * (b % M)) % M;
+Multiplication -- (a * b) % M = ((a % M) * (b % M)) % M;
 
 Division -- (a / b) % M = ((a % M) * (b ^ -1) % M) % M;
 
@@ -49,6 +49,5 @@ int main()
     }
 
     cout << fact;
-
     return 0;
 }
