@@ -2,7 +2,7 @@
 using namespace std;
 
 // The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself
-//Normal solution is that when we use a two arrays to store the paths of the nodes while traversing them two times (one time for each) -- TC : O(N) + O(N) , SC : O(N) + O(N)
+// Normal solution is that when we use a two arrays to store the paths of the nodes while traversing them two times (one time for each) -- TC : O(N) + O(N) , SC : O(N) + O(N)
 // Optimized approach would be if just check what my both child return not NULL that means i am the LCA
 
 class TreeNode
