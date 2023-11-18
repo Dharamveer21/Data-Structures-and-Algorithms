@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Approach -- Generate all & check simultaneously
+
 // Using Backtracking
 class Solution
 {
