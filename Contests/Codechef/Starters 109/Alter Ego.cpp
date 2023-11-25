@@ -14,8 +14,8 @@ int main()
         int n;
         cin >> n;
 
-        vector<int> arrA1, arrA2, ans;
-        int oddCount = 0;
+        vector<int> arrA1, arrA2, ans(n);
+        int oddCount = 0, halfSize = n / 2;
 
         for (int i = 0; i < n; i++)
         {
@@ -48,23 +48,27 @@ int main()
 
         for (int i = 0; i < n1; i++)
         {
-            int num1 = arrA1[i];
-            int num2 = arrA1[n1 + i];
+            int diff = arrA1[i];
+            int sum = arrA1[n1 + i];
 
-            ans.push_back((num2 + num1) / 2);
-            ans.push_back((num2 - num1) / 2);
+            int num1 = ((sum + diff) / 2);
+            int num2 = ((sum - diff) / 2);
+
+            ans[i] = num1;
+            ans[halfSize + i] = num2;
         }
-         
+
         for (int i = 0; i < n2; i++)
         {
-            int num1 = arrA2[i];
-            int num2 = arrA2[n2 + i];
+            int diff = arrA2[i];
+            int sum = arrA2[n2 + i];
 
-            ans.push_back((num2 + num1) / 2);
-            ans.push_back((num2 - num1) / 2);
+            int num1 = ((sum + diff) / 2);
+            int num2 = ((sum - diff) / 2);
+
+            ans[i + n1] = num1;
+            ans[halfSize + i + n1] = num2;
         }
-
-        sort(ans.begin(), ans.end(), greater<int>());
 
         for (int i = 0; i < n; i++)
         {
