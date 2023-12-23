@@ -21,7 +21,7 @@ public:
         moments['S'] = {0, -1};
 
         int initialX = 0, initialY = 0;
-        visited.insert({"0_0"});
+        visited.insert({"0 0"});
 
         for (int i = 0; i < path.size(); i++)
         {
