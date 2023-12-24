@@ -22,7 +22,7 @@ public:
     {
         vector<int> traversal;
         stack<TreeNode *> st;
-
+        
         if (root == NULL)
         {
             return traversal;
@@ -34,7 +34,7 @@ public:
         {
             auto node = st.top();
             st.pop();
-
+            
             traversal.push_back(node->val);
 
             if (node->left != NULL)
