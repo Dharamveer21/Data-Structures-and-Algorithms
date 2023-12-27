@@ -1,18 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*the vis graph can be break into strongly connected components if the edges are reversed
+/*
+the vis graph can be break into strongly connected components if the edges are reversed
 it will not change anything in strong connected components but their neighbour SCC are not vis by them
 
 The ans is the no of dfs calls by main function
 */
 
-/*we can easily find the connected components*/
-/*this algorithm is used to find the strongly connected components inside the connected components*/
+// we can easily find the connected components
+// this algorithm is used to find the strongly connected components inside the connected components
 
-/*sort all vertices according to finshing time*/
-/*Reverse the graph*/
-/*Do a dfs*/
+// sort all vertices according to finshing time
+// Reverse the graph
+// Do a dfs
 
 class Solution
 {
