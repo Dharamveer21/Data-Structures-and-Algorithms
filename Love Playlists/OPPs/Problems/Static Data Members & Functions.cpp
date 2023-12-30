@@ -10,10 +10,11 @@ private:
 
 public:
     // static data members are the variables that do not belong to a particular object like the time to complete the game in this case , it will be same for all the characters of the game or the objects of the class Hero
+    
     // if these members are made public then we can intialize them outside the class using scope resolution operator & also we can directly access it without using any object
     static int time_to_complete;
 
-    // no need for object to call them ,this also do not have this keyword as they can be called without object
+    // no need for object to call them , also do not have this keyword as they can be called without object
     // static functions can only access the static data members
 
     static int random()
@@ -21,7 +22,7 @@ public:
         cout << time_to_complete << endl;
         return time_to_complete;
     }
-
+    
     int getLevel()
     {
         return level;

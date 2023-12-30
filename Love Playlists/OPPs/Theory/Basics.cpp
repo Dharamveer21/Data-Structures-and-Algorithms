@@ -50,8 +50,8 @@ Object is an instance built up on that blue print
 Class - Car , Objects - BMW , Suzuki
 */
 
-/*
-example :- class of a rectangle
+
+// example :- class of a rectangle
 class Rectangle
 {
   // properties or data
@@ -74,10 +74,10 @@ class Rectangle
     return 0;
   }
 };
-*/
+
 
 int main()
 {
-  // Rectangle r1,r2,r3; :- are objects of class Rectangle
+  Rectangle r1,r2,r3; // -- are objects of class Rectangle
   return 0;
 }
