@@ -39,7 +39,7 @@ public:
     }
 };
 
-// TC : O(N)
+// TC : O(N + 26) = O(N)
 // SC : O(26) = O(1)
 
 int main()
