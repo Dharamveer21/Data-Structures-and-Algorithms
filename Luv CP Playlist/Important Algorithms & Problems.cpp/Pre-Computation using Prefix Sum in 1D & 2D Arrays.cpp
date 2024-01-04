@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//  to print the sum of the 1D - array from index l to r in multiple queries , we first do the thing that we take
-// the prefix sum of the array before executing the queries , now for any given query the sum between l & r is sum[r] - sum[l-1]
-
 /*
+To print the sum of the 1D - array from index l to r in multiple queries , we first do the thing that we
+take the prefix sum of the array before executing the queries , now for any given query the sum between l & r
+is sum[r] - sum[l-1]
+
 Given 2D array arr of N*N integers . Given Q queries and in each query given a , b , c and d print sum of square
 represented by (a,b) as top left corner & (c,d) as bottom right corner
 
@@ -78,7 +79,7 @@ int main()
         for (int j = 0; j < n; j++)
         {
             cin >> arr[i][j];
-            pf[i][j] = pf[i - 1][j] + pf[i][j - 1] - pf[i - 1][j - 1];
+            pf[i][j] = pf[i - 1][j] + pf[i][j - 1] - pf[i - 1][j - 1] + arr[i][j];
         }
     }
 
