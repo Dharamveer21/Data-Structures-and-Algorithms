@@ -8,21 +8,22 @@ bool vis[N];
 void dfs(int vertex)
 {
     // take action on vertex after entering the vertex
-
+    
     if (vis[vertex])
     {
         return;
     }
-
+    
     cout << vertex << endl;
-
     vis[vertex] = true;
 
     for (int child : g[vertex])
     {
         // take action before entering the child node
+
         cout << "par : " << vertex << "  child : " << child << endl;
         dfs(child);
+        
         // take action after exiting the child node
     }
 
@@ -47,3 +48,7 @@ int main()
 
     return 0;
 }
+
+// TC : O(V + 2 * E) = O(V + E)
+// Because recursion is called V times due to visited & in each recursion its for iterates over its children
+// now total for loop on all recusions will be (2 * edges in graph) 

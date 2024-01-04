@@ -34,6 +34,7 @@ public:
         {
             dfs(image, sr, sc, image[sr][sc], color);
         }
+        
         return image;
     }
 };
