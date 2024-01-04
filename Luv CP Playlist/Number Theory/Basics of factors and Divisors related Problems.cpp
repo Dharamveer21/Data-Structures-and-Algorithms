@@ -15,7 +15,6 @@ int main()
         {
             if (n % i == 0)
             {
-
                 cout << i << " " << n / i << endl;
                 ct += 1;
                 sum += i;

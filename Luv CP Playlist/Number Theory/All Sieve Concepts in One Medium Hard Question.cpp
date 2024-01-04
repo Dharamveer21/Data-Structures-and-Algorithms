@@ -78,6 +78,7 @@ int main()
             for (int j = i; j < pf.size(); j++)
             {
                 int product = pf[i] * pf[j];
+
                 if (i == j && x % product != 0)
                 {
                     continue;
@@ -85,7 +86,7 @@ int main()
 
                 int toRemove = x / product;
 
-                if (canRemove[toRemove])
+                if (canRemove[toRemove] || toRemove == 1)
                 {
                     isPossible = true;
                     break;

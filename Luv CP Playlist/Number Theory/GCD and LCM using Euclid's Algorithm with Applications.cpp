@@ -25,5 +25,6 @@ int main()
     // then divisor is ans
 
     cout << gcd(12, 18) << endl;
+    cout << __gcd(12, 18) << endl;
     return 0;
 }

@@ -11,7 +11,8 @@ int main()
     for (int i = 2; i * i <= n; i++)
     {
         // find minimuum prime factor and finish it
-        // then update the number afcter removing all occurence of that factor
+        // then update the number after removing all occurence of that factor
+
         while (n % i == 0)
         {
             prime_factors.push_back(i);
@@ -19,8 +20,8 @@ int main()
         }
     }
 
-// O(sqrt(N))
-
+    // O(sqrt(N))
+    
     if (n > 1)
     {
         prime_factors.push_back(n);

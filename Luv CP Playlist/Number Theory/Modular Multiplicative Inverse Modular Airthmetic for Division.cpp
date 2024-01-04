@@ -31,14 +31,13 @@ int main()
       as we know if a * b == 1 b is multiplicative inverse of a
       and if a % b == 1 then b is MMI of a
 
-
       Fermet theorem (A ^ (M-1)) % M = 1
       where M is prime and A is not a multiple of M
 
       then (A ^ (M-2)) % M = A^(-1)
 
       then MMI of any A is ((A ^ (M-2)) % M)
-      binexp(A,M-2)
+      binexp(A , M-2)
       which can be calculated using binary exponentiation
     */
 

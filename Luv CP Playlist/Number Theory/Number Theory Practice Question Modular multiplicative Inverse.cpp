@@ -25,6 +25,7 @@ int bin_exp(int a, int b)
 int main()
 {
     fact[0] = 1;
+    
     for (int i = 1; i < N; i++)
     {
         fact[i] = (fact[i - 1] * 1LL * i) % M;
@@ -39,7 +40,7 @@ int main()
         cin >> n >> k;
 
         // kPn % M
-        // k!/(k-n)!
+        // k ! / (k-n)!
 
         int ans = fact[k];
         ans = (ans * 1LL * bin_exp(fact[k - n], M - 2)) % M;

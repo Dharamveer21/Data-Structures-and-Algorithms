@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e7 + 10;
-vector<int> isPrime(N, true);
+vector<bool> isPrime(N, true);
 
 int main()
 {
@@ -38,7 +38,7 @@ int main()
         }
     }
 
-    // O(Nlog(logN))
+    // O(N * log(logN))
 
     return 0;
 }

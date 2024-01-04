@@ -3,17 +3,17 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
+    int numWorkers;
+    cin >> numWorkers;
 
-    vector<int> mask(n, 0);
+    vector<int> mask(numWorkers, 0);
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < numWorkers; i++)
     {
-        int num_workers;
-        cin >> num_workers;
+        int workingDays;
+        cin >> workingDays;
 
-        for (int j = 0; j < num_workers; j++)
+        for (int j = 0; j < workingDays; j++)
         {
             int day;
             cin >> day;
@@ -25,9 +25,9 @@ int main()
     int person1 = -1, person2 = -1;
     int mx_days = -1;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < numWorkers; i++)
     {
-        for (int j = i + 1; j < n; j++)
+        for (int j = i + 1; j < numWorkers; j++)
         {
             int intersection = (mask[i] & mask[j]);
             int common_days = __builtin_popcount(intersection);
@@ -46,6 +46,6 @@ int main()
     cout << "mx_days : " << mx_days << endl;
     cout << "person1 : " << person1 << endl;
     cout << "person2 : " << person2 << endl;
-    
+
     return 0;
 }

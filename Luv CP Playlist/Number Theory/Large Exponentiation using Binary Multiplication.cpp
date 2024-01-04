@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-const long long int M = 1e8 + 7;
+const long long int M = 1e18 + 7;
 
-// if M ,= 10^18 then a*a is overflow so we use binary multiplication
-// a * a= a+a+a... a times so we can take stepwise modulas
-// to do a+a+a...a times in O(log n) time using binary multiplication
+// if M = 10^18 then a * a is overflow so we use binary multiplication
+// a * a = a + a + a ... a times so we can take stepwise modulas
+// to do a + a + a ... a times in O(log n) time using binary multiplication
 
 int binMultiply(long long a, long long b)
 {
@@ -26,8 +26,8 @@ int binMultiply(long long a, long long b)
 
 int bin_exp_itr(long long a, int b)
 {
-    // if a <= 10^18 we just have to take  a%M first
-    int ans = 0;
+    // if a <= 10^18 we just have to take a % M first
+    int ans = 1;
 
     while (b)
     {

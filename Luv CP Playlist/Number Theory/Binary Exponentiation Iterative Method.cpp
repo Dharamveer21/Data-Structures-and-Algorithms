@@ -2,12 +2,11 @@
 using namespace std;
 const int M = 1e9 + 10;
 
-// a<= 19^9 b <= 10^9 M = 10^9
+// a <= 19^9 , b <= 10^9 M = 10^9
 
 int bin_exp_itr(int a, int b)
 {
-
-    int ans = 0;
+    int ans = 1;
 
     while (b)
     {

@@ -87,6 +87,7 @@ int main()
     {
         cout << "Yes a power of 2" << endl;
     }
+    
     // because power of 2 only contains 100000 and n-1 = 0111111
     // there & will result in 0
 

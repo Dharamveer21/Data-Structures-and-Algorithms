@@ -82,7 +82,7 @@ int main()
             }
         }
 
-        long long product = a1 * b1;
+        long long product = a1 * 1LL * b1;
         ans = ans > product ? ans : product;
     }
 

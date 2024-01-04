@@ -24,13 +24,14 @@ int binMultiply(long long a, long long b, int m)
     return ans;
 }
 
-// if b <= very large like (50)^(64^32)
-// then we have to use eular theorem
-/*
+/* 
+if b <= very large like (50)^(64^32)
+then we have to use eular theorem
+
 eular totient function -->
 
-fi(n) = n * (1-1/p)*(1-1/p1)*.. where p ,p1 ... are all distinct prime factors of n
-now for a prime no n --> fi(n) = n * (1-1/n) = n-1
+fi(n) = n * (1-1/p) * (1-1/p1) * .. where p ,p1 ... are all distinct prime factors of n
+now for a prime no n --> fi(n) = n * (1 - 1 / n) = n-1
 
 and according to eular theorem
 (a^b) % M = (a ^ (b % fi(M)) % M  if M is prime fi(M) = M-1
@@ -39,8 +40,8 @@ and according to eular theorem
 */
 int bin_exp_itr(long long a, long long b, int m)
 {
-    // if a <= 10^18 we just have to take  a%M first
-    int ans = 0;
+    // if a <= 10^18 we just have to take a % M first
+    int ans = 1;
 
     while (b)
     {
