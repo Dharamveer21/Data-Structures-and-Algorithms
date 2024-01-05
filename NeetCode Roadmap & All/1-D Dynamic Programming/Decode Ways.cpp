@@ -2,11 +2,10 @@
 using namespace std;
 
 /*
-Approach -- It is a dp Problem where we have to find the num of ways , so at last there must be only one way for a string starting with
-ind 'n' of length 0
+Approach -- It is a dp Problem where we have to find the num of ways , so at last there must be only one way for a string starting with ind 'n' of length 0
 
-Now as we know we have to check all ways of decoding , firstly take only one char at index ind . if it is valid decode then call the function for (ind+1)
-also take two characters with ind , ind+1 -- if they both together also make a valid mapping then call the function for (ind+2)
+Now as we know we have to check all ways of decoding , firstly take only one char at index ind . if it is valid decode then call the function for (ind + 1)
+also take two characters with ind , ind+1 -- if they both together also make a valid mapping then call the function for (ind + 2)
 
 add these two values is the total Number of ways of Decoding the array
 */

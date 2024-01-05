@@ -4,7 +4,7 @@ using namespace std;
 /*
 Approach -- we have to store the count of each element in the array , to find the number of operations needs
 to delete them , now we can see that we need to delete every element with 3 deletes in one operation . So we
-can see that when we divivde countNum by 3 , we can get 3 possible remainders
+can see that when we divide countNum by 3 , we can get 3 possible remainders
 
 we need a hash map to store the count of each element
 
