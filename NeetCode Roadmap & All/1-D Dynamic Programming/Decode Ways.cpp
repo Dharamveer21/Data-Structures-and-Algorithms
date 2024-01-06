@@ -80,31 +80,6 @@ public:
     }
 
     // tabulation
-    bool isMappingValid(string &str)
-    {
-        int len = str.length();
-
-        if (len == 1 && str[0] != '0')
-        {
-            return true;
-        }
-
-        else if (len == 2)
-        {
-            if ((str[0] == '1') && (str[1] >= '0' && str[1] <= '9'))
-            {
-                return true;
-            }
-
-            else if ((str[0] == '2') && (str[1] >= '0' && str[1] <= '6'))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     int numDecodings(string s)
     {
         int n = s.length();
@@ -140,31 +115,6 @@ public:
     }
 
     // space optimization
-    bool isMappingValid(string &str)
-    {
-        int len = str.length();
-
-        if (len == 1 && str[0] != '0')
-        {
-            return true;
-        }
-
-        else if (len == 2)
-        {
-            if ((str[0] == '1') && (str[1] >= '0' && str[1] <= '9'))
-            {
-                return true;
-            }
-
-            else if ((str[0] == '2') && (str[1] >= '0' && str[1] <= '6'))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     int numDecodings(string s)
     {
         int n = s.length();
