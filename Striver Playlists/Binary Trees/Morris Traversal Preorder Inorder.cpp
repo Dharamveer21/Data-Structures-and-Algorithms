@@ -2,12 +2,13 @@
 using namespace std;
 
 // This traversal didnot require any extra sort_heap
-//     Tc : O(N) but Sc : O(1)
+//     TC : O(N) but SC : O(1)
 // Threaded binary tree -- logic
 
 // In order then one line change to convert it into pre order
 
-/*From the root i went to left & if left is not null i will connect the rightmost guy in the left subtree to the root make a thread then begins the traversal*/
+// From the root i went to left & if left is not null i will connect the rightmost guy in the left subtree to
+// the root make a thread then begins the traversal
 
 class TreeNode
 {
@@ -43,6 +44,7 @@ public:
             else
             {
                 TreeNode *prev = curr->left;
+                
                 // check the thread on rightmost guy
                 while (prev->right != NULL && prev->right != curr)
                 {

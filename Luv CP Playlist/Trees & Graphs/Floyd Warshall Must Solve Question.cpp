@@ -27,7 +27,7 @@ int main()
     }
 
     reverse(deleted_nodes.begin(), deleted_nodes.end());
-
+ 
     for (int k = 0; k < n; k++)
     {
         int k_v = deleted_nodes[k];

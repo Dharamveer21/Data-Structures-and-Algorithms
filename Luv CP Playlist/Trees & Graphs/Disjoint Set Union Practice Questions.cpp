@@ -92,6 +92,7 @@ int find(int v)
     {
         return v;
     }
+
     // path compression
     return par[v] = find(par[v]);
 }
@@ -139,8 +140,10 @@ int main()
         cin >> x >> y;
 
         Union(x, y);
+
         int mx = *(--sizes.end());
         int mn = *(sizes.begin());
+        
         cout << (mx - mn) << endl;
     }
 

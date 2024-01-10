@@ -25,6 +25,7 @@ bool is_valid(int i, int j)
 int bfs()
 {
     int mx = 0;
+
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -47,7 +48,7 @@ int bfs()
             }
         }
     }
-
+     
     int ans = 0;
 
     while (!q.empty())

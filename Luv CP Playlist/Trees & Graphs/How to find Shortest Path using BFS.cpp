@@ -37,7 +37,7 @@ int BFS(string source, string dest)
 
     queue<pair<int, int>> q;
     q.push({sourceX, sourceY});
-    vis[sourceX][sourceY] = true;
+    vis[sourceX][sourceY] = true; 
 
     while (!q.empty())
     {

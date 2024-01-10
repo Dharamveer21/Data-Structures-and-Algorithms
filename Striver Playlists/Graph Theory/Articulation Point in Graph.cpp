@@ -1,11 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*if we remove any vertex from the graph then all the edges connected to that vertex will be removed
-now even after that if the graph remian connected then it is not a articulation point*/
+/*
+if we remove any vertex from the graph then all the edges connected to that vertex will be removed
+now even after that if the graph remian connected then it is not a articulation point
 
-/*when i remove the node then the children of the node should be not be able to reach a node before it that means lowest_time[child] >= time[node] && par != -1 -- which means it must not be a starting point*/
-/*for starting point the logic is -- if it has more than one disconnected children then it is an articulation point*/
+when i remove the node then the children of the node should be not be able to reach a node before it that means lowest_time[child] >= time[node] && par != -1 -- which means it must not be a starting point
+
+for starting point the logic is -- if it has more than one disconnected children then it is an articulation point
+*/
 
 class Solution
 {

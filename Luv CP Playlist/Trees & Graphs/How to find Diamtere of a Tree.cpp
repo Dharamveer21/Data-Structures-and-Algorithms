@@ -42,6 +42,7 @@ int main()
             mx_depth = depth[i];
             mx_depth_node1 = i;
         }
+        
         depth[i] = 0;
     }
 
