@@ -36,7 +36,8 @@ int main()
         printBinary((int)ch);
     }
 
-    // in case of uppercase letter the next bit to most significant bit is unset , its 5th bit but set for its corresponding lowercase letter rest of all bits are same for both
+    // in case of uppercase letter the next bit to most significant bit is unset , its 5th
+    // bit but set for its corresponding lowercase letter rest of all bits are same 
 
     // it works for all letters
     // to convert A to a we set its 5th bit
@@ -87,7 +88,7 @@ int main()
     {
         cout << "Yes a power of 2" << endl;
     }
-    
+
     // because power of 2 only contains 100000 and n-1 = 0111111
     // there & will result in 0
 
