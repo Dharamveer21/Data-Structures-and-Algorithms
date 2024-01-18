@@ -4,8 +4,9 @@ using namespace std;
 class Solution
 {
 public:
-    string shortestPalindrome(string s)
+    long long int substrCount(string s, int k)
     {
+        // It is a GFG Question
     }
 };
 

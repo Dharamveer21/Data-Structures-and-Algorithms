@@ -4,7 +4,7 @@ using namespace std;
 class Solution
 {
 public:
-    int repeatedStringMatch(string a, string b)
+    int longestConsecutive(vector<int> &nums)
     {
     }
 };
