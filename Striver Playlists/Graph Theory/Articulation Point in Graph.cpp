@@ -14,15 +14,18 @@ for starting point -- if it has more than one disconnected children then it is a
 class Solution
 {
 private:
-    int timer = 1;
-    void dfs(int node, int parent, vector<bool> &vis, vector<bool> &mark, vector<int> &time, vector<int> &lowest_time, vector<int> adj[])
+    int timer = 0;
+
+protected:
+    void findArticulationPoint(int node, int parent, vector<bool> &vis, vector<bool> &markArticulationPoint, vector<int> &disc, vector<int> &low, vector<int> graph[])
     {
-        int children = 0;
         vis[node] = true;
-        time[node] = lowest_time[node] = timer;
+        disc[node] = low[node] = timer;
         timer++;
 
-        for (auto child : adj[node])
+        int children = 0;
+
+        for (int child : graph[node])
         {
             if (child == parent)
             {
@@ -31,12 +34,12 @@ private:
 
             if (!vis[child])
             {
-                dfs(child, node, vis, mark, time, lowest_time, adj);
-                lowest_time[node] = min(lowest_time[node], lowest_time[child]);
+                findArticulationPoint(child, node, vis, markArticulationPoint, disc, low, graph);
+                low[node] = min(low[node], low[child]);
 
-                if (lowest_time[child] >= time[node] && parent != -1)
+                if (low[child] >= disc[node] && parent != -1)
                 {
-                    mark[node] = true;
+                    markArticulationPoint[node] = true;
                 }
 
                 children++;
@@ -44,13 +47,13 @@ private:
 
             else
             {
-                lowest_time[node] = min(lowest_time[node], time[child]); // because if that node is removed i can't reach anyone that have lowest time than it
+                low[node] = min(low[node], disc[child]);
             }
         }
 
-        if (children > 1 && parent == -1)
+        if (parent == -1 && children > 1)
         {
-            mark[node] = true;
+            markArticulationPoint[node] = true;
         }
     }
 
@@ -58,33 +61,26 @@ public:
     vector<int> articulationPoints(int V, vector<int> adj[])
     {
         vector<bool> vis(V, false);
-        vector<int> time(V);
-        vector<int> lowest_time(V);
-        vector<bool> mark(V, false);
-        vector<int> ans;
+        vector<int> disc(V, 0), low(V, 0);
+        vector<bool> markArticulationPoint(V, false);
+        vector<int> articulationPoints;
+
+        findArticulationPoint(0, -1, vis, markArticulationPoint, disc, low, adj);
 
         for (int node = 0; node < V; node++)
         {
-            if (!vis[node])
+            if (markArticulationPoint[node] == true)
             {
-                dfs(node, -1, vis, mark, time, lowest_time, adj);
+                articulationPoints.push_back(node);
             }
         }
 
-        for (int node = 0; node < V; node++)
-        {
-            if (mark[node])
-            {
-                ans.push_back(node);
-            }
-        }
-
-        if (ans.size() == 0)
+        if (articulationPoints.size() == 0)
         {
             return {-1};
         }
 
-        return ans;
+        return articulationPoints;
     }
 };
 
