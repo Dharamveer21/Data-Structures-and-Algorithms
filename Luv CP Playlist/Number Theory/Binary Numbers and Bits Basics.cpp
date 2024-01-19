@@ -9,7 +9,7 @@ Every even binary number ends with 0
 /*
 AND , OR & XOR Bitwise Operators
 
-A   B      A & B     A | B   A ^ B    !A
+A   B      A & B     A | B   A ^ B    ~A
 0   0        0         0       0       1
 0   1        0         1       1       1
 1   0        0         1       1       0
@@ -48,7 +48,7 @@ int main()
      
      0 is for positive numbers
      1 is for negative numbers
-
+     
      but in case of an unsigned integer there is no such bit thats way it shows the correct value of 2^32 - 1
     */
     return 0;

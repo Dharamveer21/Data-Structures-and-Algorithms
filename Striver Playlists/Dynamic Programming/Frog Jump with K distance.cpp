@@ -7,7 +7,7 @@ int min_energy(int ind, int k, vector<int> &heights, vector<int> &energy)
     if (energy[ind] != -1)
     {
         return energy[ind];
-    }
+    } 
 
     int energy_used = INT_MAX;
 

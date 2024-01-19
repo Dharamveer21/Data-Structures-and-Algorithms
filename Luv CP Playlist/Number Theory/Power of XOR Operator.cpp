@@ -20,6 +20,7 @@ int main()
     // XOR - same - 0
     //  different - 1
 
+    // x^x = 0
     // x^0 = x
 
     swap(a, b);
