@@ -11,6 +11,8 @@ take a node which will point to curr node , first put nothing in the stack
 there are 2 conditons , if & else
 if node is non null, means it points to some valid node , put it into stack and then point to its left
 is node is null , means left part is not there , so pop out from stack & point to its right node
+
+Approach 3 -- using morris Traversal
 */
 
 class TreeNode
@@ -63,7 +65,7 @@ public:
                 st.push(node);
                 node = node->left;
             }
-
+            
             else
             {
                 if (st.empty())
@@ -80,6 +82,49 @@ public:
         }
 
         return inorderTrav;
+    }
+
+    // Morris Traversal
+    vector<int> inorderTraversal(TreeNode *root)
+    {
+        TreeNode *curr = root;
+        vector<int> inorder;
+
+        while (curr != root)
+        {
+            if (curr->left == NULL)
+            {
+                int val = curr->val;
+                inorder.push_back(val);
+                curr = curr->right;
+            }
+
+            else
+            {
+                TreeNode *prev = curr->left;
+
+                while (prev->right != NULL && prev->right != curr)
+                {
+                    prev = prev->right;
+                }
+
+                if (prev->right == NULL)
+                {
+                    prev->right = curr;
+                    curr = curr->left;
+                }
+
+                else
+                {
+                    prev->right = NULL;
+                    int val = curr->val;
+                    inorder.push_back(val);
+                    curr = curr->right;
+                };
+            }
+        }
+
+        return inorder;
     }
 };
 

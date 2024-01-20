@@ -63,6 +63,7 @@ public:
 };
 
 // TC : O(n * logn) + O(n) + O(n) = O(n * logn)
+// SC : O(n)
 
 int main()
 {

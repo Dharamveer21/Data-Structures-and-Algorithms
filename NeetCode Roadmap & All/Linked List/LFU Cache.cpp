@@ -41,7 +41,7 @@ protected:
         auto newAddress = cacheCount[counter].begin();
         cache[key] = newAddress;
     }
-
+    
 public:
     LFUCache(int capacity)
     {
