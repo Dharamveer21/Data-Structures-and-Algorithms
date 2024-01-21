@@ -159,19 +159,19 @@ protected:
         {
             return NULL;
         }
-    
+
         Node *leftSubtree = convertSortedLLIntoBST(headLL, nodeCnt / 2);
-    
+
         Node *root = headLL;
         root->left = leftSubtree;
         headLL = headLL->right;
-    
+
         Node *rightSubtree = convertSortedLLIntoBST(headLL, nodeCnt - nodeCnt / 2 - 1);
         root->right = rightSubtree;
-    
+
         return root;
     }
-    
+
     void inorderTraversal(Node *root, vector<int> &inorder)
     {
         Node *curr = root;
@@ -224,7 +224,7 @@ public:
 
         vector<int> inorder;
         inorderTraversal(root, inorder);
-        
+
         return inorder;
     }
 };

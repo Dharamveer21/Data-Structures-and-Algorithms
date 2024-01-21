@@ -60,7 +60,7 @@ protected:
             }
         }
     }
-
+    
     TreeNode *convertIntoBST(int start, int end, vector<int> &inorder)
     {
         if (start > end)
@@ -78,7 +78,7 @@ protected:
 
         return root;
     }
-
+    
 public:
     TreeNode *balanceBST(TreeNode *root)
     {
