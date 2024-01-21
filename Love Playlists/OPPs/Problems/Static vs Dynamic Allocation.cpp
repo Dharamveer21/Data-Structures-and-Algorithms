@@ -9,6 +9,12 @@ private:
     char level;
 
 public:
+    Hero(int health, int level)
+    {
+        this->health = health;
+        this->level = level;
+    }
+
     int getLevel()
     {
         return level;
@@ -33,7 +39,7 @@ public:
 int main()
 {
     // static allocation
-    Hero ramesh;
+    Hero ramesh(10, 11);
 
     cout << "Size of Object : " << sizeof(ramesh) << endl;
 
@@ -44,7 +50,7 @@ int main()
     cout << "Level is : " << ramesh.getLevel() << endl;
 
     // Dynamic Allocation
-    Hero *b = new Hero;
+    Hero *b = new Hero(10, 11);
 
     cout << "Size of Object : " << sizeof(*b) << endl;
 

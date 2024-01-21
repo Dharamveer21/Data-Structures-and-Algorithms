@@ -50,7 +50,7 @@ int main()
 
     /*
     for statistically created obj the destructor is called by itself
-    but for dynamically created obj we need to create the destructor
+    but for dynamically created obj we need to call the destructor
     */
 
     return 0;

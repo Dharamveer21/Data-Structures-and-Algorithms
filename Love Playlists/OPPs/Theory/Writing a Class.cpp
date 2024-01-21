@@ -28,7 +28,7 @@ int main()
     Rectangle r1, r2; // They occupy space in memory
     // only data members will occupy memory , but member functions won't occupy any memory
     // so r1 has length & breadth so it will occupy 4 + 4 = 8 bytes as length & breadth are both integers and integer will take 4 bytes
-
+    
     r1.length = 10; // use dot operators to access members but only the public members , by default the members are private
     r1.breadth = 5;
 

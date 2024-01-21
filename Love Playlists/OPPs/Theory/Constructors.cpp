@@ -35,7 +35,7 @@ private:
 public:
     // member functions
 
-    /* All the constructors have same name so it is function overloading */
+    // All the constructors have same name so it is function overloading
 
     // Non Paramterized Constructor
     Rectangle()
@@ -43,7 +43,7 @@ public:
         this->length = 0;
         this->breadth = 0;
     }
-    
+
     // Paramterized Constructor
     /* Here we can also provide l = 0 , b = 0 which can behave like Non-Parameterized Constructor also */
     Rectangle(int l, int b)
@@ -51,7 +51,7 @@ public:
         this->setLength(l);
         this->setBreadth(b);
     }
-    
+
     // Copy Constructor
     /* Here we have taken it as reference because we don't want that new Rectangle got created when the copy constructor runs */
     Rectangle(Rectangle &rect)
@@ -59,7 +59,7 @@ public:
         this->length = rect.length;
         this->breadth = rect.breadth;
     }
-    
+
     void setLength(int l)
     {
         if (l < 0)
@@ -70,7 +70,7 @@ public:
 
         this->length = l;
     }
-    
+
     void setBreadth(int b)
     {
         if (b < 0)
@@ -113,7 +113,7 @@ int main()
 
     cout << "Length : " << r.getLength() << endl;
     cout << "Breadth : " << r.getBreadth() << endl;
-    
+
     cout << "Perimeter : " << r.perimeter() << endl;
     cout << "Area : " << r.area() << endl;
 

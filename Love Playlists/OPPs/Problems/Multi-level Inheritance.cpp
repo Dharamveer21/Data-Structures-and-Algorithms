@@ -7,6 +7,11 @@ public:
     int age;
     int weight;
 
+    Animal()
+    {
+        cout << "Animal" << endl;
+    }
+
     void speak()
     {
         cout << "Speaking" << endl;
@@ -15,10 +20,20 @@ public:
 
 class Dog : public Animal
 {
+public:
+    Dog()
+    {
+        cout << "Dog Constructor" << endl;
+    }
 };
 
 class GermanShepherd : public Dog
 {
+public:
+    GermanShepherd()
+    {
+        cout << "GermanShepherd Constructor" << endl;
+    }
 };
 
 int main()
