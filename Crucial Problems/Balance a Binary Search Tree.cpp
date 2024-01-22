@@ -70,7 +70,7 @@ protected:
 
         int mid = ((start + end) >> 1);
         int val = inorder[mid];
-
+        
         TreeNode *root = new TreeNode(val);
 
         root->left = convertIntoBST(start, mid - 1, inorder);

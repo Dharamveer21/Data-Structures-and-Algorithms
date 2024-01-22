@@ -26,25 +26,47 @@ public:
 class Solution
 {
 protected:
-    void convertBSTIntoSortedLL(Node *root, Node *&head)
+    pair<Node *, Node *> convertBSTIntoSortedLL(Node *root)
     {
         if (root == NULL)
         {
-            return;
+            return {NULL, NULL};
         }
 
-        convertBSTIntoSortedLL(root->right, head);
+        pair<Node *, Node *> leftSubtree = convertBSTIntoSortedLL(root->left);
+        pair<Node *, Node *> rightSubtree = convertBSTIntoSortedLL(root->right);
 
-        root->right = head;
+        Node *leftHead = leftSubtree.first, *leftTail = leftSubtree.second;
+        Node *rightHead = rightSubtree.first, *rightTail = rightSubtree.second;
 
-        if (head != NULL)
+        if (leftHead == NULL)
         {
-            head->left = root;
+            root->right = rightHead;
+
+            if (rightHead != NULL)
+            {
+                rightHead->left = root;
+                return {root, rightTail};
+            }
+
+            return {root, root};
         }
 
-        head = root;
+        else
+        {
+            leftTail->right = root;
+            root->left = leftTail;
 
-        convertBSTIntoSortedLL(root->left, head);
+            root->right = rightHead;
+
+            if (rightHead != NULL)
+            {
+                rightHead->left = root;
+                return {leftHead, rightTail};
+            }
+        }
+
+        return {leftHead, root};
     }
 
     Node *mergeSortedLL(Node *headLL1, Node *headLL2)
@@ -139,34 +161,37 @@ protected:
         return head;
     }
 
-    int countNodesInLL(Node *&head)
+    Node *convertSortedLLIntoBST(Node *head)
     {
-        int nodeCnt = 0;
-        Node *curr = head;
-
-        while (curr != NULL)
-        {
-            nodeCnt++;
-            curr = curr->right;
-        }
-
-        return nodeCnt;
-    }
-
-    Node *convertSortedLLIntoBST(Node *&headLL, int nodeCnt)
-    {
-        if (nodeCnt <= 0 || headLL == NULL)
+        if (head == NULL)
         {
             return NULL;
         }
 
-        Node *leftSubtree = convertSortedLLIntoBST(headLL, nodeCnt / 2);
+        if (head->right == NULL)
+        {
+            head->left = NULL;
+            return head;
+        }
 
-        Node *root = headLL;
+        Node *fast = head;
+        Node *slow = head;
+        Node *slowPrev = NULL;
+
+        while (fast != NULL && fast->right != NULL)
+        {
+            fast = fast->right->right;
+            slowPrev = slow;
+            slow = slow->right;
+        }
+
+        Node *root = slow;
+        slowPrev->right = NULL;
+
+        Node *leftSubtree = convertSortedLLIntoBST(head);
+        Node *rightSubtree = convertSortedLLIntoBST(slow->right);
+
         root->left = leftSubtree;
-        headLL = headLL->right;
-
-        Node *rightSubtree = convertSortedLLIntoBST(headLL, nodeCnt - nodeCnt / 2 - 1);
         root->right = rightSubtree;
 
         return root;
@@ -193,7 +218,7 @@ protected:
                     prev = prev->right;
                 }
 
-                if (prev->left == NULL)
+                if (prev->right == NULL)
                 {
                     prev->right = curr;
                     curr = curr->left;
@@ -212,15 +237,11 @@ protected:
 public:
     vector<int> merge(Node *root1, Node *root2)
     {
-        Node *headLL1 = NULL, *headLL2 = NULL;
-
-        convertBSTIntoSortedLL(root1, headLL1);
-        convertBSTIntoSortedLL(root2, headLL2);
+        Node *headLL1 = convertBSTIntoSortedLL(root1).first;
+        Node *headLL2 = convertBSTIntoSortedLL(root2).first;
 
         Node *headLL = mergeSortedLL(headLL1, headLL2);
-
-        int nodeCnt = countNodesInLL(headLL);
-        Node *root = convertSortedLLIntoBST(headLL, nodeCnt);
+        Node *root = convertSortedLLIntoBST(headLL);
 
         vector<int> inorder;
         inorderTraversal(root, inorder);
