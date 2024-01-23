@@ -111,7 +111,9 @@ public:
     }
 };
 
-// TC : O(n^3)
+// K -- average size of string in nums , N -- size of nums
+// TC : O(N^3 * K)
+// SC : O(N * K)
 
 int main()
 {
