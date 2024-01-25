@@ -17,7 +17,7 @@ public:
         int n = arr.size();
         int maxi = 0;
         int max_sum = 0;
-
+         
         for (int part = ind; part < min(ind + k, n); part++)
         {
             maxi = max(maxi, arr[part]);

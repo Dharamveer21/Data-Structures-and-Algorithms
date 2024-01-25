@@ -9,7 +9,7 @@ public:
     {
         int n1 = s.size(), n2 = t.size();
         int distinct_sequences[n1][n2];
-
+        
         for (int ind1 = 0; ind1 < n1; ind1++)
         {
             for (int ind2 = 0; ind2 < n2; ind2++)

@@ -25,7 +25,7 @@ public:
             {
                 subseq.push_back(num);
             }
-
+            
             else
             {
                 int ind = it - subseq.begin();

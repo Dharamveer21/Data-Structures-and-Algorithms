@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*Partition Dp burst left balloons , right balloons & at last burst my own baloon so that i won't affect other parts*/
+/*
+Partition Dp burst left balloons , right balloons & at last burst my own baloon so that i won't affect other parts
+*/
 
 class Solution
 {

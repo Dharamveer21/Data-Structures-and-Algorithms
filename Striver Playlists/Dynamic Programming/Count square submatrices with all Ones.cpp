@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*at any ind the no. of sqaures end end at it*/
+/*at any ind the no. of squares end end at it*/
 
 class Solution
 {

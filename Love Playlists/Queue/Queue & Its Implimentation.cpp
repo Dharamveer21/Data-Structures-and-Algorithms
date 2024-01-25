@@ -15,7 +15,7 @@ public:
         size = 100001;
         int *arr = new int[size];
         qfront = 0;
-        rear = 0;
+        rear = 0; 
     }
 
     /*----------------- Public Functions of Queue -----------------*/

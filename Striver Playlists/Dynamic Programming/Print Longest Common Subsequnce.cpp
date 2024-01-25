@@ -77,7 +77,7 @@ int longestCommonSubsequence(string text1, string text2)
             longest_sequence[ind1][ind2] = max(len3, max(len1, len2));
         }
     }
-
+    
     print_lcs(longest_sequence, text1, text2);
     return longest_sequence[text1.size() - 1][text2.size() - 1];
 }

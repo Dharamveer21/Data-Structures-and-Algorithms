@@ -48,10 +48,10 @@ int countPartitions(int n, int d, vector<int> &arr)
     {
         return 0;
     }
-
+     
     int tar = (sum + d) / 2;
     vector<vector<int>> counts(n, vector<int>(tar + 1, -1));
-
+     
     for (int ind = 0; ind < n; ind++)
     {
         for (int target = 0; target <= tar; target++)

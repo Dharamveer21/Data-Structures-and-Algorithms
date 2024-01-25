@@ -1,12 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* using front partition otherwise it will give us tle*/
-/*find 1st palindrome parts and pass on recurrsion the next one*/
-/*1D DP Problem*/
-
-/* using front partition otherwise it will give us tle*/
-/*find 1st palindrome parts and pass on recurrsion the next one*/
+/* 
+using front partition otherwise it will give us tle
+find 1st palindrome parts and pass on recurrsion the next one
+1D DP Problem
+*/
 
 class Solution
 {

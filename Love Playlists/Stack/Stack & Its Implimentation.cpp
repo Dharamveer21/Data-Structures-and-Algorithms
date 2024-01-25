@@ -18,7 +18,7 @@ public:
         arr = new int[size];
         top = -1;
     }
-
+    
     ~Arr_Stack()
     {
         delete[] arr;
@@ -31,7 +31,7 @@ public:
             top++;
             arr[top] = element;
         }
-
+ 
         else
         {
             cout << "Stack Overflow " << endl;

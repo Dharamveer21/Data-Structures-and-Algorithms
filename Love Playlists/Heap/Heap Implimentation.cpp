@@ -41,7 +41,7 @@ public:
                 index = parent;
                 continue;
             }
-
+            
             return;
         }
     }
@@ -74,7 +74,7 @@ public:
             {
                 leftValue = arr[leftChild];
             }
-
+            
             if (rightChild <= size)
             {
                 rightValue = arr[rightChild];

@@ -10,7 +10,7 @@ public:
     {
         return (word1.size() < word2.size());
     }
-
+    
     bool is_preceeder(string &word1, string &word2)
     {
         int ind1 = 0, ind2 = 0, cmp = 2;
@@ -22,7 +22,7 @@ public:
                 ind1++;
                 ind2++;
             }
-
+            
             else
             {
                 cmp--;
@@ -34,7 +34,7 @@ public:
         {
             return true;
         }
-
+           
         return false;
     }
 
@@ -58,7 +58,7 @@ public:
 
             len_indexes[len].second = ind - 1;
         }
-
+          
         for (int i = 0; i < words.size(); i++)
         {
             int len = words[i].size();
@@ -72,7 +72,7 @@ public:
                     maxi = max(maxi, longest_chain[j]);
                 }
             }
-
+              
             longest_chain[i] += maxi;
             max_len = max(max_len, longest_chain[i]);
         }

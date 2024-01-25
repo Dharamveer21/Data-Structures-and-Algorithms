@@ -35,7 +35,7 @@ public:
                     hash_arr[ind] = prev_ind;
                 }
             }
-
+            
             long_inc_seq[ind] += long_len;
 
             if (long_inc_seq[ind] >= max_len)
