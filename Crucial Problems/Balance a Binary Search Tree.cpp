@@ -67,7 +67,7 @@ protected:
         {
             return NULL;
         }
-
+        
         int mid = ((start + end) >> 1);
         int val = inorder[mid];
         

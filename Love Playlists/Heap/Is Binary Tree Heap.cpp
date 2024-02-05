@@ -67,7 +67,7 @@ protected:
 
         int leftChildInd = 2 * ind;
         int rightChildInd = 2 * ind + 1;
-
+         
         return (isCompleteBinaryTree(leftChildInd, nodeCnt, root->left) && isCompleteBinaryTree(rightChildInd, nodeCnt, root->right));
     }
 
