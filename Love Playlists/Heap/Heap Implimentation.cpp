@@ -25,11 +25,13 @@ public:
 
     void insert(int val)
     {
+        // insert at last position
         arr.push_back(val);
 
         size = size + 1;
         int index = size;
 
+        // move it to its correct position
         while (index > 1)
         {
             int curr = index;
@@ -41,20 +43,21 @@ public:
                 index = parent;
                 continue;
             }
-            
+
             return;
         }
     }
 
     void deletion()
     {
-        // Here we only delete the top node
+        // Here we can only delete the top node
         if (size == 0)
         {
             cout << "Heap is Empty";
             return;
         }
 
+        // replace top node with last node & pop out last node
         arr[1] = arr[size];
         arr.pop_back();
         size--;
@@ -74,12 +77,12 @@ public:
             {
                 leftValue = arr[leftChild];
             }
-            
+
             if (rightChild <= size)
             {
                 rightValue = arr[rightChild];
             }
-
+                
             if (leftValue >= rightValue && arr[index] < leftValue)
             {
                 swap(arr[index], arr[leftChild]);
@@ -116,17 +119,17 @@ void heapify(int ind, int size, vector<int> &arr)
     int largest = ind;
     int leftChild = 2 * ind;
     int rightChild = 2 * ind + 1;
-
+     
     if (leftChild <= size && arr[leftChild] > arr[ind])
     {
         largest = max(largest, leftChild);
     }
-
-    if (rightChild <= size && arr[rightChild] > arr[ind])
+    
+    if (rightChild <= size && arr[rightChild] > arr[largest])
     {
         largest = max(largest, rightChild);
     }
-
+     
     if (largest != ind)
     {
         swap(arr[largest], arr[ind]);
@@ -157,7 +160,7 @@ int main()
     {
         heapify(ind, n, arr);
     }
-
+    
     for (int ind = 1; ind <= n; ind++)
     {
         cout << arr[ind] << " ";
@@ -171,5 +174,5 @@ int main()
 /*
 TC for insertion is O(log(N))
 TC for deletion is O(log(N))
-TC for heapify is O(N)
+TC for heapify is O(N * log(N))
 */
