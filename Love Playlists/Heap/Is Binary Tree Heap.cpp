@@ -64,13 +64,13 @@ protected:
         {
             return (root == NULL);
         }
-
+        
         int leftChildInd = 2 * ind;
         int rightChildInd = 2 * ind + 1;
          
         return (isCompleteBinaryTree(leftChildInd, nodeCnt, root->left) && isCompleteBinaryTree(rightChildInd, nodeCnt, root->right));
     }
-
+    
     bool isMaxHeap(Node *root)
     {
         if (root == NULL)
@@ -90,7 +90,7 @@ protected:
                 return false;
             }
         }
-
+         
         if (root->right != NULL)
         {
             Node *rightChild = root->right;
@@ -114,6 +114,9 @@ public:
         return (isCompleteBinaryTree(1, nodeCnt, root) && isMaxHeap(root));
     }
 };
+
+// TC : O(N)
+// SC : O(N)
 
 int main()
 {

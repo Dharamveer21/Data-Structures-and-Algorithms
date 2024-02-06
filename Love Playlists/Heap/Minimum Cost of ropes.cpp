@@ -22,9 +22,9 @@ public:
 
             long long secondRope = Ropes.top();
             Ropes.pop();
-
+            
             long long finalRopeLen = firstRope + secondRope;
-
+              
             long long cost = finalRopeLen;
             minRopeCost += cost;
 

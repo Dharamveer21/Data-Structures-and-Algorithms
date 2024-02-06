@@ -12,8 +12,7 @@ class Solution
 protected:
     void heapify(int ind, int size, vector<int> &arr)
     {
-        int largest = ind;
-        int index = ind;
+        int largest = ind , index = ind;
 
         while (index < size)
         {
@@ -22,12 +21,12 @@ protected:
 
             if (leftChild < size && arr[leftChild] > arr[index])
             {
-                largest = max(largest, leftChild);
+                largest = leftChild;
             }
-
+            
             if (rightChild < size && arr[rightChild] > arr[largest])
             {
-                largest = max(largest, rightChild);
+                largest = rightChild;
             }
 
             if (largest != index)

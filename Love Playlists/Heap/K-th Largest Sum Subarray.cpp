@@ -13,14 +13,14 @@ int getKthLargest(vector<int> &arr, int k)
         for (int ind2 = ind1; ind2 < arr.size(); ind2++)
         {
             sum += arr[ind2];
-
+               
             if (subarrCnt != 0)
             {
                 subarrSum.push(sum);
                 subarrCnt--;
                 continue;
             }
-            
+              
             int currSum = sum;
             int topSum = subarrSum.top();
 
