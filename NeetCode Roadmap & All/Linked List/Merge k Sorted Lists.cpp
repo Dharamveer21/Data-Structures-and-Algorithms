@@ -80,8 +80,8 @@ public:
 };
 
 // K -- number of lists & N -- average size of each list
-// TC : O(K * N)
-// SC : O(K * N)
+// TC : O(K * N * log(K)) 
+// SC : O(K * N + K) = O(K * N)
 
 int main()
 {
