@@ -36,7 +36,7 @@ public:
             int num = curr->val;
             minHeap.push({num, ind});
         }
-        
+
         while (!minHeap.empty())
         {
             pair<int, int> nodePointer = minHeap.top();
@@ -47,7 +47,7 @@ public:
 
             ListNode *curr = lists[index];
             curr = curr->next;
-            
+
             if (curr != NULL)
             {
                 int val = curr->val;
@@ -71,6 +71,10 @@ public:
         return head;
     }
 };
+
+// K -- number of lists & N -- average size of each list
+// TC : O(K * N * log(K)) 
+// SC : O(K * N + K) = O(K * N)
 
 int main()
 {
