@@ -67,7 +67,7 @@ public:
 
         balanceHeaps();
     }
-
+      
     double findMedian()
     {
         double median = 0;
@@ -78,7 +78,7 @@ public:
             median = (double)leftMaxHeap.top();
             return median;
         }
-
+         
         double left = (double)leftMaxHeap.top();
         double right = (double)rightMinHeap.top();
 

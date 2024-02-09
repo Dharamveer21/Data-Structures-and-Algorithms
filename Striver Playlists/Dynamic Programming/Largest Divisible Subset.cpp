@@ -2,8 +2,8 @@
 using namespace std;
 
 /*
-sort the array & if any no is divisible by prev then it will also be divisible by all its previous of the subset
-convert subset to subsequence problem
+sort the array & if any number is divisible by prev then it will also be divisible by all its previous of the 
+subset convert subset to subsequence problem
 */
 
 class Solution
@@ -47,7 +47,7 @@ public:
                     index = i;
                 }
             }
-
+            
             else
             {
                 hash_arr[i] = ind;

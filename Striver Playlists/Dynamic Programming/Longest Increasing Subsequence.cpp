@@ -25,11 +25,11 @@ public:
         }
 
         int take_len = 0, not_take_len = 0;
-
+         
         // take it
         int curr_val = nums[ind];
         int prev_val = (prev_ind == n) ? INT_MAX : nums[prev_ind];
-
+           
         if (curr_val < prev_val)
         {
             take_len = 1 + long_inc_subseq(ind - 1, ind, nums, long_inc_seq);
