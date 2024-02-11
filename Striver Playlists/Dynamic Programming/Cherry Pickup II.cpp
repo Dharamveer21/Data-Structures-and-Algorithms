@@ -110,7 +110,7 @@ public:
                     }
 
                     int max_cherrys = 0;
-                    
+
                     for (int block1 = col1 - 1; block1 <= col1 + 1; block1++)
                     {
                         for (int block2 = col2 - 1; block2 <= col2 + 1; block2++)
