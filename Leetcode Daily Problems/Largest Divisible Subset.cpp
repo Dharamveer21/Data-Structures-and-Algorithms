@@ -15,7 +15,6 @@ Also we will maintain an hash array to keep the index of the previous largest su
 
 class Solution
 {
-protected:
 public:
     vector<int> largestDivisibleSubset(vector<int> &nums)
     {
