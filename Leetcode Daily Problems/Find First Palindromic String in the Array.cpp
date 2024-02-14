@@ -15,12 +15,10 @@ class Solution
 public:
     string firstPalindrome(vector<string> &words)
     {
-        int n = words.size();
-
         for (string &word : words)
         {
-            int compareLen = word.length() / 2;
-            bool isPalindrome = equal(word.begin(), word.begin() + compareLen, word.rbegin());
+            int halfLen = word.length() / 2;
+            bool isPalindrome = equal(word.begin(), word.begin() + halfLen, word.rbegin());
 
             if (isPalindrome)
             {
