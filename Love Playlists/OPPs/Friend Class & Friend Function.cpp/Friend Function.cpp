@@ -24,7 +24,7 @@ void addComplex(Complex &c1, Complex &c2)
     Complex c3;
     c3.realPart = c1.realPart + c2.realPart;
     c3.complexPart = c1.complexPart + c2.complexPart;
-
+    
     cout << "New Number is : " << c3.realPart << " + " << c3.complexPart << "i" << endl;
 }
 
