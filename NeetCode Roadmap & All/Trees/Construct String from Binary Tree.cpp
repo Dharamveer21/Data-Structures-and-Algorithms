@@ -2,10 +2,11 @@
 using namespace std;
 
 /*
-Approach -- use recursion , but there are two important conditions , 1st one is when the root node has left non NULL , then recursion
-calls for left child , 2nd one is right child is not null and left child is null then recursion runs for left child .
-In 2nd case we have to insert empty brackets so we again call recursion
-base case will be when root is NULL it returns
+Approach -- use recursion , but there are two important conditions , 1st one is when 
+the root node has left non NULL , then recursion calls for left child , 2nd one is 
+right child is not null and left child is null then recursion runs for left child .
+In 2nd case we have to insert empty brackets so we again call recursion base case will 
+be when root is NULL it returns
 */
 
 class TreeNode
