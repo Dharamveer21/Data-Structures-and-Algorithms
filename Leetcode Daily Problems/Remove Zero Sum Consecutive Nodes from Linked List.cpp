@@ -76,6 +76,8 @@ public:
         }
 
         head = dummyHead->next;
+
+        delete dummyHead;
         return head;
     }
 };
