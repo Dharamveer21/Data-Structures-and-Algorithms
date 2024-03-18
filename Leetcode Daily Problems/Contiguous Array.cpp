@@ -28,7 +28,7 @@ public:
             int num = nums[ind];
             num = ((num == 0) ? -1 : num);
 
-            cumulativeSum += num;
+            cumulativeSum = cumulativeSum + num;
             int requiredSum = cumulativeSum + n;
 
             if (cumulativeSumIndex[requiredSum] != INF)
