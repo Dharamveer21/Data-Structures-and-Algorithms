@@ -2,15 +2,14 @@
 using namespace std;
 
 /*
-Approach -- Here if we replace 0 with -1 then the problem becomes the 
+Approach --
 */
 
 class Solution
 {
 public:
-    int findMaxLength(vector<int> &nums)
+    int findMinArrowShots(vector<vector<int>> &points)
     {
-        int ans = 0;
     }
 };
 
