@@ -27,34 +27,24 @@ protected:
         int lo = start, hi = end;
 
         if (lo > hi)
-        {
             return -1;
-        }
 
         while (hi - lo > 1)
         {
             int mid = (lo + hi) >> 1;
 
             if (times[mid] < time)
-            {
                 lo = mid;
-            }
 
             else
-            {
                 hi = mid - 1;
-            }
         }
 
         if (isIndexValid(hi, n) && times[hi] < time)
-        {
             return hi;
-        }
 
         if (isIndexValid(lo, n) && times[lo] < time)
-        {
             return lo;
-        }
 
         return -1;
     }
@@ -65,34 +55,24 @@ protected:
         int lo = start, hi = end;
 
         if (lo > hi)
-        {
             return n;
-        }
 
         while (hi - lo > 1)
         {
             int mid = (lo + hi) >> 1;
 
             if (times[mid] <= time)
-            {
                 lo = mid + 1;
-            }
 
             else
-            {
                 hi = mid;
-            }
         }
 
         if (isIndexValid(lo, n) && times[lo] > time)
-        {
             return lo;
-        }
 
         if (isIndexValid(hi, n) && times[hi] > time)
-        {
             return hi;
-        }
 
         return n;
     }
@@ -114,8 +94,7 @@ public:
             endTimes.push_back(endTime);
         }
 
-        int newStart = newInterval[0];
-        int newEnd = newInterval[1];
+        int newStart = newInterval[0], newEnd = newInterval[1];
 
         int leftSideSafeIntervalsIndex = justSmallerNumber(endTimes, 0, n - 1, newStart);
         int rightSideSafeIntervalsIndex = justGreaterNumber(startTimes, 0, n - 1, newEnd);
@@ -130,16 +109,12 @@ public:
         newUpdatedInterval[1] = newUpdatedEndTime;
 
         for (int ind = 0; ind <= leftSideSafeIntervalsIndex; ind++)
-        {
             finalIntervals.push_back(intervals[ind]);
-        }
 
         finalIntervals.push_back(newUpdatedInterval);
 
         for (int ind = rightSideSafeIntervalsIndex; ind < n; ind++)
-        {
             finalIntervals.push_back(intervals[ind]);
-        }
 
         return finalIntervals;
     }
@@ -154,21 +129,14 @@ class Solution
 protected:
     int isIntervalSmallerGreaterOrCanBeMerged(vector<int> &interval, vector<int> &newInterval)
     {
-        int currStart = interval[0];
-        int currEnd = interval[1];
-
-        int newStart = newInterval[0];
-        int newEnd = newInterval[1];
+        int currStart = interval[0], currEnd = interval[1];
+        int newStart = newInterval[0], newEnd = newInterval[1];
 
         if (currEnd < newStart)
-        {
             return -1;
-        }
 
         if (currStart > newEnd)
-        {
             return 1;
-        }
 
         return 0;
     }
