@@ -58,7 +58,7 @@ public:
     }
 };
 
-// TC : O(N)
+// TC : O(N * log(N) + N) = O(N * log(N))
 // SC : O(1)
 
 int main()
