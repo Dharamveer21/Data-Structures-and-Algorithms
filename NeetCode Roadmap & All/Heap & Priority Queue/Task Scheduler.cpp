@@ -17,10 +17,10 @@ class Solution
 public:
     int leastInterval(vector<char> &tasks, int n)
     {
-        stack<pair<int, char>> st;
+        int leastIntervalCount = 0;
+        int *taskFreq = new int[26]{};
+        priority_queue<int> maxFreqHeap;
         int continuousTasksCount = n + 1;
-        priority_queue<pair<int, char>> taskSortedFreq;
-        int leastIntervalCount = 0, *taskFreq = new int[26]{};
 
         for (int ind = 0; ind < tasks.size(); ind++)
         {
@@ -30,40 +30,43 @@ public:
             taskFreq[index] += 1;
         }
 
-        for (char ch = 'a'; ch <= 'z'; ch++)
+        for (int task = 0; task < 26; task++)
         {
-            int task = ch - 'A';
             int freq = taskFreq[task];
 
-            taskSortedFreq.push({freq, task});
+            if (freq > 0)
+                maxFreqHeap.push(freq);
         }
 
-        while (!taskSortedFreq.empty())
+        while (!maxFreqHeap.empty())
         {
-            while (continuousTasksCount--)
+            vector<int> taskCompletedInThisRound;
+
+            for (int task = 1; task <= continuousTasksCount; task++)
             {
-                pair<int, char> maxFreqTask = taskSortedFreq.top();
-                taskSortedFreq.pop();
+                if (maxFreqHeap.empty())
+                    break;
 
-                char task = maxFreqTask.second;
-                int freq = maxFreqTask.first;
-
-                freq = freq - 1;
-                leastIntervalCount++;
-
-                if (freq != 0)
-                {
-                    st.push({freq, task});
-                }
+                int maxFreq = maxFreqHeap.top();
+                maxFreqHeap.pop();
+                  
+                maxFreq = maxFreq - 1;
+                taskCompletedInThisRound.push_back(maxFreq);
             }
 
-            while (!st.empty())
+            for (int task = 0; task < taskCompletedInThisRound.size(); task++)
             {
-                pair<int, char> taskFreq = st.top();
-                st.pop();
-
+                int freq = taskCompletedInThisRound[task];
                 
+                if (freq > 0)
+                    maxFreqHeap.push(freq);
             }
+
+            if (maxFreqHeap.empty())
+                leastIntervalCount += taskCompletedInThisRound.size();
+
+            else
+                leastIntervalCount += continuousTasksCount;
         }
 
         delete[] taskFreq;
