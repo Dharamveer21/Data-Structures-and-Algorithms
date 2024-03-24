@@ -2,11 +2,12 @@
 using namespace std;
 
 /*
-Approach 1 -- We can reverse the second half of the list so that we can use two pointer to on firstHalf of list 
+Approach 1 -- We can reverse the second half of the list so that we can use two pointer to on firstHalf of list
 and the reversed of the secondHalf of the list . We join them one by one until it reaches its end .
 
-Approach 2 -- We can use the basic concept of the recursion is that when it reached the base condition then it 
-reverted back . We can use this reverted values for joining with the curr index
+Approach 2 -- We can use the basic concept of the recursion is that when it reached the base condition then it
+reverted back . We can use this reverted values for joining with the curr pointer and update the curr index .
+We take curr pointer as the pass by reference method to update the curr pointer & keep its value .
 */
 
 class ListNode
@@ -68,7 +69,7 @@ public:
     {
         if (head == NULL || head->next == NULL)
             return;
-        
+
         ListNode *headOfFirstHalf = head;
         ListNode *headOfSecondHalf = middleOfLinkedList(head);
         ListNode *headOfReverseOfSecondHalf = reverseLinkedList(headOfSecondHalf);
@@ -96,9 +97,30 @@ public:
 // Approach 2
 class Solution
 {
+protected:
+    void reorderLinkedList(ListNode *node, ListNode *&curr)
+    {
+        if (node == NULL)
+            return;
+
+        reorderLinkedList(node->next, curr);
+        ListNode *nextToCurr = curr->next;
+
+        if (nextToCurr == NULL || node == curr)
+        {
+            node->next = ((node == curr) ? NULL : node->next);
+            return;
+        }
+
+        curr->next = node;
+        curr = nextToCurr;
+        node->next = ((nextToCurr == node) ? NULL : nextToCurr);
+    }
+
 public:
     void reorderList(ListNode *head)
     {
+        reorderLinkedList(head, head);
     }
 };
 
