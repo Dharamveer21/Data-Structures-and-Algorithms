@@ -61,9 +61,9 @@ int main()
     cout << ch << endl; // a
 
     // to convert lowercase to uppercase we can do bitwise and with underscore
-    char CH = 'a';
-    char ch = CH & ('_');
-    cout << ch << endl; // A
+    char ch = 'a';
+    char CH = ch & ('_');
+    cout << CH << endl; // A
 
     // make lsb means last i bits of a no unset in single operation
     int a = 59;
