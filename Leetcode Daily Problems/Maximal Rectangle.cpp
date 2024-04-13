@@ -4,7 +4,7 @@ using namespace std;
 // Stack & Dynamic Programming
 class Solution
 {
-public:
+protected:
     vector<int> nextSmallerElement(vector<int> &heights)
     {
         stack<int> st;
@@ -65,6 +65,7 @@ public:
         return maxArea;
     }
 
+public:
     int maximalRectangle(vector<vector<char>> &matrix)
     {
         int maxArea = -1;
