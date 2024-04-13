@@ -49,6 +49,10 @@ public:
         }
 
         reverse(smallestNumberAfterRemovingKDigits.begin(), smallestNumberAfterRemovingKDigits.end());
+
+        if (smallestNumberAfterRemovingKDigits == "")
+            return "0";
+
         return smallestNumberAfterRemovingKDigits;
     }
 };
