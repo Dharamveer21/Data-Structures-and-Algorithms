@@ -1,14 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-/*
-Approach --  
-*/
-
-class Solution {
+//
+class Solution
+{
 public:
-    int timeRequiredToBuy(vector<int>& tickets, int k) 
-    {    
+    int timeRequiredToBuy(vector<int> &tickets, int k)
+    {
     }
 };
 
@@ -17,6 +15,6 @@ public:
 
 int main()
 {
-    
+
     return 0;
 }
