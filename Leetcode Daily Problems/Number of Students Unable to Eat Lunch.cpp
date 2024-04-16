@@ -38,38 +38,44 @@ protected:
             studentsQueue.push(student);
         }
     }
-                                                                            
+
 public:
     int countStudents(vector<int> &students, vector<int> &sandwiches)
     {
         queue<int> studentsQueue;
         stack<int> sandwichesStack;
+
         int studentsSendBackCount = 0;
+        int studentsWithoutSandwich = 0;
 
-        fillStack(sandwiches, sandwichesStack);
         fillQueue(students, studentsQueue);
+        fillStack(sandwiches, sandwichesStack);
 
-        while (!sandwichesStack.empty() && studentsQueue.size() != studentsSendBackCount)
+        while (!sandwichesStack.empty())
         {
             int sandwich = sandwichesStack.top();
+            studentsSendBackCount = 0;
             sandwichesStack.pop();
 
-            int student = studentsQueue.front();
-
-            while (student != sandwich && studentsQueue.size() != studentsSendBackCount)
+            while (studentsQueue.front() != sandwich)
             {
+                if (studentsSendBackCount == studentsQueue.size())
+                {
+                    studentsWithoutSandwich = studentsQueue.size();
+                    return studentsWithoutSandwich;
+                }
+
+                int student = studentsQueue.front();
                 studentsQueue.pop();
-                studentsQueue.push(student);
 
                 studentsSendBackCount += 1;
-                student = studentsQueue.front();
+                studentsQueue.push(student);
             }
 
             studentsQueue.pop();
         }
 
-        int countOfStudentsUnableToEatSandwiches = studentsQueue.size();
-        return countOfStudentsUnableToEatSandwiches;
+        return studentsWithoutSandwich;
     }
 };
 
@@ -88,12 +94,46 @@ class Solution
 public:
     int countStudents(vector<int> &students, vector<int> &sandwiches)
     {
-        int numberOfSandwiches = sandwiches.size();
         int countOfStudentsUnableToEatSandwiches = 0;
+        int studentsWhoLikeSandwich0 = 0, numberOfStudents = students.size();
+        int studentsWhoLikeSandwich1 = 0, numberOfSandwiches = sandwiches.size();
+
+        for (int ind = 0; ind < numberOfStudents; ind++)
+        {
+            int student = students[ind];
+
+            if (student == 0)
+                studentsWhoLikeSandwich0++;
+
+            else
+                studentsWhoLikeSandwich1++;
+        }
 
         for (int ind = 0; ind < numberOfSandwiches; ind++)
         {
+            int sandwich = sandwiches[ind];
 
+            if (sandwich == 0)
+            {
+                if (studentsWhoLikeSandwich0 == 0)
+                {
+                    countOfStudentsUnableToEatSandwiches = studentsWhoLikeSandwich1;
+                    break;
+                }
+
+                studentsWhoLikeSandwich0--;
+            }
+
+            else
+            {
+                if (studentsWhoLikeSandwich1 == 0)
+                {
+                    countOfStudentsUnableToEatSandwiches = studentsWhoLikeSandwich0;
+                    break;
+                }
+
+                studentsWhoLikeSandwich1--;
+            }
         }
 
         return countOfStudentsUnableToEatSandwiches;
