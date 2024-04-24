@@ -87,9 +87,9 @@ public:
 
         for (int term = 3; term <= n; term++)
         {
-            int currTerm = termsOfTheTribonacciSeries[2];
+            int currTerm = termsOfTheTribonacciSeries[0];
             currTerm += termsOfTheTribonacciSeries[1];
-            currTerm += termsOfTheTribonacciSeries[0];
+            currTerm += termsOfTheTribonacciSeries[2];
 
             termsOfTheTribonacciSeries[0] = termsOfTheTribonacciSeries[1];
             termsOfTheTribonacciSeries[1] = termsOfTheTribonacciSeries[2];
