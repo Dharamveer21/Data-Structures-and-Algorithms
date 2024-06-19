@@ -6,25 +6,25 @@ class Solution
 protected:
     string newCountAndSayString(string &str)
     {
-        int n = str.length();
-        int first = 0,countOccurrence = 0;
+        string countAndSayStr;
+        int countOccurrence = 0;
+        int n = str.length(), first = '0';
 
-        for(int ind=0;ind<n;ind++)
+        for (int ind = 0; ind < n; ind++)
         {
             int curr = str[ind];
 
-            if(curr != first)
+            if (curr != first)
             {
-                
+                string cnt = to_string(countOccurrence);
+                countAndSayStr += cnt;
+                countAndSayStr.push_back(first);
 
                 first = curr;
-                countOccurrence = 1;
+                countOccurrence = 0;
             }
 
-            else
-            {
-                countOccurrence++;
-            }
+            countOccurrence++;
         }
     }
 
@@ -34,15 +34,15 @@ public:
         if (n == 1)
             return "1";
 
-        string prevStr = countAndSay(n-1);
+        string prevStr = countAndSay(n - 1);
         string currStr = newCountAndSayString(prevStr);
 
-        return currStr;    
+        return currStr;
     }
 };
 
 int main()
 {
-    
+
     return 0;
 }
