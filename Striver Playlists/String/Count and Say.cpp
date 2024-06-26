@@ -6,26 +6,25 @@ class Solution
 protected:
     string newCountAndSayString(string &str)
     {
-        string countAndSayStr;
         int countOccurrence = 0;
-        int n = str.length(), first = '0';
+        string countAndSayStr = "";
+        int n = str.length(), ind = 0;
 
-        for (int ind = 0; ind < n; ind++)
+        while (ind < n)
         {
-            int curr = str[ind];
+            int count = 0;
+            char ch = str[ind];
 
-            if (curr != first)
+            while (ind < n && str[ind] == ch)
             {
-                string cnt = to_string(countOccurrence);
-                countAndSayStr += cnt;
-                countAndSayStr.push_back(first);
-
-                first = curr;
-                countOccurrence = 0;
+                count++;
+                ind++;
             }
 
-            countOccurrence++;
+            countAndSayStr += to_string(count) + string(1, ch);
         }
+
+        return countAndSayStr;
     }
 
 public:
