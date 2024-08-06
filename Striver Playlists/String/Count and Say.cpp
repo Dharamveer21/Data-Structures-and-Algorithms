@@ -20,7 +20,7 @@ protected:
                 count++;
                 ind++;
             }
-
+                   
             countAndSayStr += to_string(count) + string(1, ch);
         }
 
